@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scenes/Flag.gd" type="Script" id=1]
+[ext_resource path="res://assets/flag-placeholder.png" type="Texture" id=2]
+
+[node name="Flag" type="Node2D"]
+
+script/script = ExtResource( 1 )
+Up = null
+Down = null
+Left = null
+Right = null
+Quitanda_Small = null
+
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -17.0
+margin/top = -16.0
+margin/right = 15.0
+margin/bottom = 16.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+

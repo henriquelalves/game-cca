@@ -15,7 +15,7 @@ margin/right = 131.0
 margin/bottom = 128.0
 script/script = ExtResource( 1 )
 __meta__ = { "_edit_group_":true }
-Quitanda_Name = ""
+Quitanda_Name = null
 
 [node name="TextureButton" type="TextureButton" parent="."]
 

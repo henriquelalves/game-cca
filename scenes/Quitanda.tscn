@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://assets/quitanda-placeholder.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Fruit.tscn" type="PackedScene" id=2]
 
 [node name="Quitanda" type="Node2D"]
 
@@ -10,11 +11,39 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 252.0
-margin/top = 54.0
-margin/right = 764.0
-margin/bottom = 566.0
+margin/left = -3.0
+margin/top = 0.0
+margin/right = 1025.0
+margin/bottom = 600.0
 texture = ExtResource( 1 )
+expand = true
 stretch_mode = 0
+
+[node name="Fruits" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="Fruit" parent="Fruits" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 137.398, 387.707 )
+
+[node name="Fruit1" parent="Fruits" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 365.941, 217.66 )
+
+[node name="Fruit2" parent="Fruits" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 557.754, 387.707 )
+
+[node name="Fruit3" parent="Fruits" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 827.108, 242.147 )
 
 
