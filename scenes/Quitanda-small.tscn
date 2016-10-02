@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://scenes/Quitanda-small.gd" type="Script" id=1]
-[ext_resource path="res://assets/quitanda-small-placeholder.png" type="Texture" id=2]
+[ext_resource path="res://assets/quitanda-small.png" type="Texture" id=2]
 
 [node name="Control" type="Control"]
 
@@ -9,13 +9,12 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 131.0
-margin/bottom = 128.0
+margin/left = -1.0
+margin/top = 1.0
+margin/right = 130.0
+margin/bottom = 129.0
 script/script = ExtResource( 1 )
-__meta__ = { "_edit_group_":true }
-Quitanda_Name = null
+__meta__ = { "_edit_lock_":true }
 
 [node name="TextureButton" type="TextureButton" parent="."]
 
@@ -23,10 +22,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 40.0
+margin/left = -65.0
+margin/top = -87.0
+margin/right = 63.0
+margin/bottom = 37.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

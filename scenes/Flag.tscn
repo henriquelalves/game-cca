@@ -10,7 +10,9 @@ Up = null
 Down = null
 Left = null
 Right = null
-Quitanda_Small = null
+Quitanda_possible = null
+is_Quitanda = null
+invert_Quitanda = false
 
 [node name="TextureFrame" type="TextureFrame" parent="."]
 

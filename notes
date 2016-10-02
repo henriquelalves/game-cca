@@ -1,0 +1,6 @@
+Problemas / Bugs
+- Button como Root nao funciona (sinais nao ativam métodos)
+- Imagens muito grandes como texture deixam o save muito muito lento
+- Drag'n Drop para pegar um nó da lista e jogar em um NodePath.
+- GRAPH NODE
+- Directory reference no help tá estranho (tem código misturado)

@@ -1,10 +1,23 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://scenes/Fruit.gd" type="Script" id=1]
 [ext_resource path="res://assets/fruit_placeholder.png" type="Texture" id=2]
 
+[sub_resource type="Animation" id=1]
+
+resource/name = "idle"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform/rot")
+tracks/0/interp = 2
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 25.0, -25.0 ] }
+
 [node name="Fruit" type="Node2D"]
 
+transform/rot = -7.59371
 script/script = ExtResource( 1 )
 
 [node name="Sprite" type="TextureButton" parent="."]
@@ -13,13 +26,24 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -63.0
-margin/top = -67.0
-margin/right = 65.0
-margin/bottom = 61.0
+margin/left = -128.0
+margin/top = -128.0
+margin/right = 0.0
+margin/bottom = 0.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/idle = SubResource( 1 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "idle"
 
 

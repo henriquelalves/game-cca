@@ -1,12 +1,14 @@
 
 extends Control
 
-export(NodePath) var Quitanda_Name
+func invert_sprite():
+	set_scale(Vector2(-1.0,1.0))
 
 func _ready():
 	print("oi")
+	add_user_signal("Quitanda_small_pressed")
 	get_node("TextureButton").connect("pressed", self, "_pressed")
 
 func _pressed():
-	if(Quitanda_Name != ""):
-		get_tree().change_scene("res://scenes/"+Quitanda_Name+".tscn")
+	emit_signal("Quitanda_small_pressed")
+	

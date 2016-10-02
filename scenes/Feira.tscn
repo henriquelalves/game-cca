@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://scenes/Feira.gd" type="Script" id=1]
-[ext_resource path="res://assets/feira_placeholder.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/feira_background.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Adilson.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Quitanda-small.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Flag.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/arvores_background.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Quitanda.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -22,11 +22,10 @@ tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), 
 [node name="Feira" type="Node2D"]
 
 script/script = ExtResource( 1 )
-Player_Initial_Flag = NodePath("Flags/Start_position")
+Player_Initial_Flag = NodePath("Flags/Flag")
 
 [node name="Background" type="Control" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -53,7 +52,8 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="Adilson" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 367.791, 164.3 )
+transform/pos = Vector2( 201.374, 131.387 )
+transform/scale = Vector2( 1.20187, 0.839077 )
 
 [node name="Feiras" type="Control" parent="."]
 
@@ -67,20 +67,6 @@ margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
 
-[node name="Control" parent="Feiras" instance=ExtResource( 4 )]
-
-margin/left = 769.0
-margin/top = 15.0
-margin/right = 899.0
-margin/bottom = 142.0
-
-[node name="Control1" parent="Feiras" instance=ExtResource( 4 )]
-
-margin/left = 68.0
-margin/top = 108.0
-margin/right = 198.0
-margin/bottom = 235.0
-
 [node name="Flags" type="Control" parent="."]
 
 editor/display_folded = true
@@ -93,33 +79,103 @@ margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
 
-[node name="Start_position" parent="Flags" instance=ExtResource( 5 )]
+[node name="Flag" parent="Flags" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 509.481, 527.569 )
-Up = NodePath("../teste2")
-Right = NodePath("../teste1")
-Quitanda = null
+transform/pos = Vector2( 267.994, 161.885 )
+Right = NodePath("../Flag1")
 
-[node name="teste1" parent="Flags" instance=ExtResource( 5 )]
+[node name="Flag1" parent="Flags" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 720.509, 414.519 )
-Up = NodePath("../teste3")
-Left = NodePath("../teste2")
-Quitanda = null
+transform/pos = Vector2( 407.274, 213.198 )
+Up = NodePath("")
+Down = NodePath("../Flag2")
+Left = NodePath("../Flag")
 
-[node name="teste2" parent="Flags" instance=ExtResource( 5 )]
+[node name="Flag2" parent="Flags" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 536.613, 333.122 )
-Quitanda = NodePath("../../Background")
+transform/pos = Vector2( 194.688, 299.536 )
+Up = NodePath("../Flag1")
+Right = NodePath("../Flag3")
 
-[node name="teste3" parent="Flags" instance=ExtResource( 5 )]
+[node name="Flag3" parent="Flags" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 722.016, 242.682 )
-Quitanda = null
+transform/pos = Vector2( 321.305, 344.756 )
+Up = NodePath("../Flag9")
+Left = NodePath("../Flag2")
+Right = NodePath("../Flag4")
 
-[node name="Quitanda" parent="." instance=ExtResource( 6 )]
+[node name="Flag4" parent="Flags" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 0, -600 )
+transform/pos = Vector2( 455.737, 399.02 )
+Up = NodePath("../Flag7")
+Left = NodePath("../Flag3")
+Right = NodePath("../Flag5")
+
+[node name="Flag5" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 734.316, 507.549 )
+Up = NodePath("../Flag6")
+Left = NodePath("../Flag4")
+
+[node name="Flag6" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 832.293, 471.373 )
+Up = NodePath("../Flag13")
+Down = NodePath("../Flag5")
+Left = NodePath("../Flag7")
+
+[node name="Flag13" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 913.323, 435.769 )
+Down = NodePath("../Flag6")
+Quitanda_possible = true
+
+[node name="Flag7" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 547.406, 358.322 )
+Up = NodePath("../Flag8")
+Down = NodePath("../Flag4")
+Right = NodePath("../Flag6")
+
+[node name="Flag8" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 747.882, 285.97 )
+Up = NodePath("../Flag14")
+Down = NodePath("../Flag7")
+Left = NodePath("../Flag9")
+
+[node name="Flag14" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 925.903, 206.167 )
+Down = NodePath("../Flag8")
+Quitanda_possible = true
+
+[node name="Flag9" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 613.729, 230.198 )
+Up = NodePath("../Flag10")
+Down = NodePath("../Flag3")
+Right = NodePath("../Flag8")
+
+[node name="Flag10" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 796.117, 157.846 )
+Up = NodePath("../Flag12")
+Down = NodePath("../Flag9")
+Left = NodePath("../Flag11")
+
+[node name="Flag12" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 885.741, 119.786 )
+Down = NodePath("../Flag10")
+Quitanda_possible = true
+
+[node name="Flag11" parent="Flags" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 571.924, 66.7982 )
+Right = NodePath("../Flag10")
+Quitanda_possible = true
+invert_Quitanda = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -131,5 +187,36 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="Foreground" type="Control" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="trees" type="TextureFrame" parent="Foreground"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 2.0
+margin/right = 1022.0
+margin/bottom = 597.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="Quitanda" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 0, -600 )
 
 

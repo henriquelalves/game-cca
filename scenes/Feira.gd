@@ -5,10 +5,28 @@ export(NodePath) var Player_Initial_Flag
 
 var player_current_flag
 
+func Quitanda_small_pressed():
+	print("oi")
+	get_node("AnimationPlayer").play("quitanda")
+
 func _ready():
+	randomize()
 	set_process_input(true)
 	
 	get_node("Adilson").connect("stop_moving", self, "_player_stopped")
+	
+	# Setting Quitanda
+	var possible_flags = get_tree().get_nodes_in_group("Quitanda_flag")
+	var random_flag = possible_flags[randi()%possible_flags.size()]
+	print(random_flag)
+	var Quitander = load("res://scenes/Quitanda-small.tscn")
+	var Quitanda = Quitander.instance()
+	Quitanda.set_pos(random_flag.get_pos())
+	random_flag.is_Quitanda = true
+	if(random_flag.invert_Quitanda):
+		Quitanda.invert_sprite()
+	get_node("Background").add_child(Quitanda)
+	Quitanda.connect("Quitanda_small_pressed", self, "Quitanda_small_pressed")
 	
 	# Setting player initial position
 	get_node("Adilson").set_pos(get_node(Player_Initial_Flag).get_pos())
@@ -50,7 +68,5 @@ func _input(event):
 					print("right")
 
 func _player_stopped():
-	if get_node(player_current_flag).Quitanda:
-		var node = get_node(player_current_flag).get_node(get_node(player_current_flag).Quitanda)
-		if node:
-			get_node("AnimationPlayer").play("quitanda")
+	if get_node(player_current_flag).is_Quitanda:
+		get_node("AnimationPlayer").play("quitanda")
