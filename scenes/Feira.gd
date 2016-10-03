@@ -4,6 +4,7 @@ extends Node2D
 export(NodePath) var Player_Initial_Flag
 
 var player_current_flag
+onready var started = false
 
 func Quitanda_small_pressed():
 	print("oi")
@@ -34,6 +35,8 @@ func _ready():
 	pass
 
 func _input(event):
+	if(!started):
+		return
 	if(event.type == InputEvent.KEY):
 		# Player movement
 		# spaghetti code yeey

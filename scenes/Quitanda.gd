@@ -35,7 +35,7 @@ func fruit_pressed(fruit):
 func back_pressed():
 	print("back_pressed")
 	if(get_node("Fruits").is_visible()):
-		get_tree().change_scene("res://scenes/Feira.tscn")
+		get_tree().change_scene("res://scenes/Game.tscn")
 	else:
 		get_node("Fruits").show()
 		get_node("Dinheiros").hide()
